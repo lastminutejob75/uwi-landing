@@ -47,8 +47,8 @@ export default function Hero({ title, subtitle }: HeroProps) {
                 className="w-full h-auto object-cover min-h-[400px]"
                 loading="eager"
                 onError={(e) => {
-                  // Fallback vers SVG placeholder
-                  e.currentTarget.src = '/images/after-organized-professional.svg';
+                  // Fallback vers image Unsplash professionnelle
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&h=800&fit=crop&q=85';
                 }}
               />
             </div>
