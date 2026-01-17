@@ -39,9 +39,18 @@ export default function Hero({ title, subtitle }: HeroProps) {
 
           {/* Right side - Visual placeholder & stats */}
           <div>
-            {/* Visual placeholder - large box */}
-            <div className="bg-slate-100 rounded-2xl p-20 mb-6 flex items-center justify-center border-2 border-dashed border-slate-300">
-              <p className="text-slate-500 text-center font-medium">Placeholder visuel (hero)</p>
+            {/* Hero image - professional with tablet */}
+            <div className="relative rounded-2xl overflow-hidden shadow-lg mb-6">
+              <img
+                src="/images/after-organized-professional.jpg"
+                alt="Professionnel serein avec tablette UWI"
+                className="w-full h-auto object-cover min-h-[400px]"
+                loading="eager"
+                onError={(e) => {
+                  // Fallback vers SVG placeholder
+                  e.currentTarget.src = '/images/after-organized-professional.svg';
+                }}
+              />
             </div>
 
             {/* Stats cards - 3 cards in a row below placeholder */}
