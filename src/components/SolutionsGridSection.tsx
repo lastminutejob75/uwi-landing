@@ -69,14 +69,25 @@ export default function SolutionsGridSection() {
             >
               <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all bg-white">
                 {/* Image zone */}
-                <div className={`relative h-72 bg-gradient-to-br ${solution.bgGradient}`}>
-                  <div className="absolute inset-0 flex items-center justify-center p-4">
+                <div className={`relative h-72 bg-gradient-to-br ${solution.bgGradient} overflow-hidden`}>
+                  <img
+                    src={solution.image}
+                    alt={solution.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      // Fallback vers SVG placeholder
+                      const svgFallback = solution.image.replace('.jpg', '.svg');
+                      e.currentTarget.src = svgFallback;
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center p-4 opacity-0 hover:opacity-100 transition-opacity bg-black/20">
                     <div className="text-center">
                       <div className={`bg-gradient-to-br ${solution.color} rounded-2xl p-6 mx-auto w-32 h-32 flex items-center justify-center mb-4 shadow-lg`}>
                         <solution.icon className="h-16 w-16 text-white" />
                       </div>
-                      <p className="text-xs text-gray-600 font-medium px-2">
-                        📸 {solution.title}
+                      <p className="text-xs text-white font-medium px-2">
+                        {solution.title}
                       </p>
                     </div>
                   </div>
