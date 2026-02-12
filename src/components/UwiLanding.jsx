@@ -4,11 +4,9 @@ import Hero from "./Hero";
 import SocialProof from "./SocialProof";
 import ComparisonSection from "./ComparisonSection";
 import WorkflowArtisanSection from "./WorkflowArtisanSection";
-import CancellationManagementSection from "./CancellationManagementSection";
 import SolutionsGridSection from "./SolutionsGridSection";
 import UseCasesSection from "./UseCasesSection";
 import FeaturesSection from "./FeaturesSection";
-import MultiChannelSection from "./MultiChannelSection";
 import ROICalculator from "./ROICalculator";
 import PricingSection from "./PricingSection";
 import TestimonialsSection from "./TestimonialsSection";
@@ -30,11 +28,9 @@ export default function UwiLanding() {
         <SocialProof />
         <ComparisonSection />
         <WorkflowArtisanSection />
-        <CancellationManagementSection />
         <SolutionsGridSection />
         <UseCasesSection />
         <FeaturesSection />
-        <MultiChannelSection />
         <ROICalculator />
         <CTASection />
         <PricingSection />
