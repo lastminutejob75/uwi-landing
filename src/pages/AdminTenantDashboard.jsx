@@ -184,7 +184,7 @@ export default function AdminTenantDashboard() {
         </div>
         {topTransferred.length > 0 ? (
           <div className="space-y-2 text-sm">
-            {topTransferred.map((item) => (
+            {topTransferred.map((item, i) => (
               <div key={item.reason} className="flex items-center justify-between">
                 <span className="font-mono text-gray-700">{item.reason}</span>
                 <span className="font-semibold text-amber-800">{item.count}</span>
