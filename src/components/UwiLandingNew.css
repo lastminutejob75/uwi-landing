@@ -33,13 +33,16 @@
 
 .uwi-landing-new .wrap {
   position: relative; z-index: 2; max-width: 430px; margin: 0 auto;
-  padding: 0;
+  padding: 0 16px;
 }
 @media (min-width: 640px) {
-  .uwi-landing-new .wrap { max-width: 600px; padding: 0 24px; }
+  .uwi-landing-new .wrap { max-width: 720px; padding: 0 24px; }
 }
 @media (min-width: 1024px) {
-  .uwi-landing-new .wrap { max-width: 1100px; padding: 0 32px; }
+  .uwi-landing-new .wrap { max-width: 1280px; padding: 0 40px; }
+}
+@media (min-width: 1280px) {
+  .uwi-landing-new .wrap { max-width: 1440px; padding: 0 48px; }
 }
 
 /* NAV */
@@ -80,6 +83,10 @@
 .uwi-landing-new .logo-name { font-size: 16px; font-weight: 800; line-height: 1; letter-spacing: -.025em; color: var(--white); }
 .uwi-landing-new .logo-tag  { font-size: 9px; font-weight: 600; letter-spacing: .12em; color: var(--teal); text-transform: uppercase; }
 
+.uwi-landing-new .nav-actions {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
 .uwi-landing-new .nav-btn {
   font-family: var(--sys-font);
   font-size: 14px; font-weight: 700; letter-spacing: -.01em;
@@ -90,11 +97,25 @@
   text-decoration: none;
   display: inline-flex;
 }
+.uwi-landing-new .nav-btn--secondary {
+  background: transparent;
+  color: var(--muted-hi);
+  border: 1px solid var(--border);
+}
+.uwi-landing-new .nav-btn--secondary:hover {
+  color: var(--teal);
+  border-color: rgba(0,212,170,.35);
+  background: rgba(0,212,170,.06);
+}
 
 .uwi-landing-new .nav-btn:active { opacity: .82; transform: scale(.96); }
+@media (max-width: 380px) {
+  .uwi-landing-new .nav-actions { gap: 6px; }
+  .uwi-landing-new .nav-btn { font-size: 12px; padding: 8px 12px; }
+}
 
 .uwi-landing-new .nav-links {
-  display: none; gap: 24px; align-items: center;
+  display: none; gap: 18px; align-items: center; flex-wrap: wrap;
 }
 .uwi-landing-new .nav-links a {
   font-size: 13px; font-weight: 600; color: var(--muted);
@@ -274,7 +295,7 @@
 .uwi-landing-new .demo { padding: 44px 20px 56px; }
 @media (min-width: 1024px) {
   .uwi-landing-new .demo { padding: 56px 0 64px; }
-  .uwi-landing-new .demo .demo-inner { max-width: 480px; margin: 0 auto; }
+  .uwi-landing-new .demo .demo-inner { max-width: 520px; margin: 0 auto; }
 }
 
 .uwi-landing-new .eyebrow {
@@ -489,3 +510,120 @@
 }
 .uwi-landing-new .landing-footer a { color: var(--muted-hi); text-decoration: none; }
 .uwi-landing-new .landing-footer a:hover { color: var(--teal); }
+
+/* Pricing plans */
+.uwi-landing-new .pricing-grid {
+  display: grid; gap: 20px;
+  grid-template-columns: 1fr;
+  margin-top: 28px;
+}
+@media (min-width: 640px) {
+  .uwi-landing-new .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .uwi-landing-new .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+
+.uwi-landing-new .pricing-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: border-color .2s, background .2s, transform .15s;
+}
+.uwi-landing-new .pricing-card:hover {
+  border-color: rgba(0,212,170,.25); background: var(--card-hi);
+}
+.uwi-landing-new .pricing-card.featured {
+  border-color: rgba(0,212,170,.35);
+  background: rgba(0,212,170,.06);
+  box-shadow: 0 0 0 1px rgba(0,212,170,.12);
+}
+.uwi-landing-new .pricing-card h3 {
+  font-size: 18px; font-weight: 800; color: var(--white); margin: 0;
+}
+.uwi-landing-new .pricing-card .price {
+  font-size: 32px; font-weight: 800; color: var(--teal);
+  letter-spacing: -.02em; line-height: 1;
+}
+.uwi-landing-new .pricing-card .price-note {
+  font-size: 13px; color: var(--muted); margin-top: -4px;
+}
+.uwi-landing-new .pricing-card ul {
+  list-style: none; margin: 0; padding: 0;
+  font-size: 14px; color: var(--muted); line-height: 1.7;
+}
+.uwi-landing-new .pricing-card ul li {
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.uwi-landing-new .pricing-card ul li::before {
+  content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0;
+}
+.uwi-landing-new .pricing-card .pricing-cta {
+  margin-top: auto; padding-top: 8px;
+}
+.uwi-landing-new .pricing-card .pricing-cta .btn-primary { width: 100%; }
+
+/* Sécurité / Garanties */
+.uwi-landing-new .security-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: 1fr;
+  margin-top: 28px;
+}
+@media (min-width: 640px) {
+  .uwi-landing-new .security-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .uwi-landing-new .security-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+}
+
+.uwi-landing-new .security-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 22px 20px;
+  text-align: center; transition: border-color .2s, background .2s;
+}
+.uwi-landing-new .security-card:hover {
+  border-color: rgba(0,212,170,.2); background: var(--card-hi);
+}
+.uwi-landing-new .security-card .sec-icon {
+  width: 48px; height: 48px; margin: 0 auto 12px;
+  border-radius: 14px; background: rgba(0,212,170,.15);
+  display: grid; place-items: center; font-size: 22px;
+}
+.uwi-landing-new .security-card h3 {
+  font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px;
+}
+.uwi-landing-new .security-card p {
+  font-size: 13px; color: var(--muted); margin: 0; line-height: 1.45;
+}
+
+/* Comment ça marche - steps */
+.uwi-landing-new .steps-row {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+  margin-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto;
+}
+@media (min-width: 768px) {
+  .uwi-landing-new .steps-row { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+
+.uwi-landing-new .step-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 26px 22px;
+  text-align: center; position: relative;
+  transition: border-color .2s, background .2s;
+}
+.uwi-landing-new .step-card:hover {
+  border-color: rgba(0,212,170,.22); background: var(--card-hi);
+}
+.uwi-landing-new .step-card .step-num {
+  width: 44px; height: 44px; margin: 0 auto 14px;
+  border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal-dk));
+  color: #052219; font-size: 18px; font-weight: 800;
+  display: grid; place-items: center;
+}
+.uwi-landing-new .step-card h3 {
+  font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px;
+}
+.uwi-landing-new .step-card p {
+  font-size: 14px; color: var(--muted); margin: 0; line-height: 1.55;
+}
